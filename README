@@ -1,0 +1,22 @@
+Utility for repacking resource archives, used in Motorola EZX smartphones.
+There is perl script somewhere on the net for this, but it produces invalid archives.
+
+Compilation:
+You'll need CMake build system, boost-filesystem and boost-program-options libraries for utility
+(for example cmake, libboost-filesystem, libboost-program-options packages in Ubuntu).
+Open terminal and go to directory with this README, and run following commands:
+mkdir build && cd build
+cmake ..
+make
+make install # either as root, or "sudo make install" in Ubuntu
+
+Usage:
+ezxpack -o resources iconres.ezx - extract "iconres.ezx" to "resources" directory
+ezxpack -p -o iconres.ezx resources - pack "resources" directory to "iconres.ezx"
+
+Uninstallation:
+You may uninstall ezxpack from system (like any other software, built with cmake) by running
+command "xargs rm < install_manifest.txt" from build directory.
+
+This utility was written a while ago, compilation was tested only on Ubuntu 10.10, so if have
+some problems - let me know.
